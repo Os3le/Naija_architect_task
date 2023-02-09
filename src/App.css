@@ -1,38 +1,357 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ /* background-color: red;  */
+ font-family: 'Space Grotesk', sans-serif;
+ font-family: 'Ubuntu', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root{
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li{
+  list-style-type: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  all: unset;
+  cursor: pointer;
+}
+nav{
+  background-color: yellow;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.width70{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.width70-nav{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: 50%;
+ 
 }
 
-.App-link {
-  color: #61dafb;
+ .top .left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:0.5rem;
+  width: max-content;
+  padding: 0;
+}
+.w{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.location .title{
+  font-size: xx-small;
+}
+.location span{
+  font-size: small;
+}
+nav .top .right {
+   display: inline-flex;
+  align-items: center;gap: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-bottom{
+  background-color: #f0f4f9;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+height: 3rem;
+width: 4rem;
+border: 2px solid white;
+}
+
+.search-div{
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.input-search{
+padding:5px;
+}
+.search{
+  border: 0.02px solid black;
+}
+
+#search-false{
+  width: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  visibility: hidden;
+  transition: width 0.5s;
+}
+#search-true{
+  width: 7rem;
+  text-transform: capitalize;
+  transition: width 0.5s;
+}
+
+.nav-items{
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: smaller;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-links:nth-child(5){
+  background-color: orange;
+}
+.nav-links button{
+  background-color: inherit;
+  padding:0.5rem 1rem  0.5rem 1rem;
+  color: rgb(38, 38, 134);
+  font-size: x-small;
+  font-weight: 600;
+  border: none;
+  text-transform: capitalize;
+  transition: all 1s;
+}
+
+.main{
+  background-color: grey;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  z-index: 0;
+}
+
+
+.timer,.banner{
+  width: 100%;
+}
+
+.text-left{
+  position: absolute;
+  top: 0;
+  left: 20%;
+  height: 17rem;
+  width: 30%;
+  z-index: 1;
+  padding: 3rem 0 3rem 0;
+}
+.main-title{
+  font-size: medium;
+  font-weight: 00;
+}
+.new-skills{
+  font-size: 40px;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+.main-buttons .register{
+  margin-right: 1rem;
+}
+.main-btn{
+  padding:0.5rem 1rem  0.5rem 1rem;
+  background-color: white;
+  color: rgb(38, 38, 134);
+  font-size: x-small;
+  font-weight: 600;
+  border: 0.002px solid black;
+}
+.register{
+  padding:0.5rem 1rem  0.5rem 1rem;
+  background-color: orange;
+  color: rgb(38, 38, 134);
+  font-size: x-small;
+  font-weight: 600;
+  border: none;
+}
+.width70-grid{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sub{
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  width: 100%;
+}
+.game-grid{
+  width: 100%;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.box{
+  border: 1px solid grey;
+  position: relative;
+}
+.box .top{
+  height: 60%;
+}
+.top-img{ width: 100%;
+  height: 100%;
+  
+}
+.box .bottom{
+  height: 40%;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+display: block;
+}
+
+.bottom .title{
+font-weight: 700;
+font-size: x-small;
+text-transform: capitalize;
+display: block;
+}
+.bottom .location{
+font-weight: 100;
+font-size: xx-small;
+text-transform: capitalize;
+}
+.absolute-square{
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  background-color: red;
+  position: absolute;
+  top:50%;
+  left: 5%;
+}
+.newsletter{
+  width: 100%;
+  position: relative;
+}
+.newsletter-icon{
+  width: 100%;
+}
+.newsletter-right{
+  width: 30%;
+  height:20rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: grid;
+  align-content: center;
+}
+.sub-now{
+margin-bottom: 0.5rem;
+}
+.newsletter-right h1{
+  margin-bottom: 2rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+.input-div{
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 3px;
+}
+.input-div input {
+  border: none;
+  outline: none;
+  width: 60%;
+  padding: 5px 0 5px 0;
+}
+.input-div button {
+  padding: 7px 10px 7px 10px;
+  color: rgb(38, 38, 134);
+  font-weight: 600;
+  border: none;
+  background-color: orange;
+}
+footer{
+background-color: rgb(8, 15, 49);
+height: 25rem;
+color: white;
+}
+.width70-footer{
+  width: 60%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 3rem;
+
+}
+.footer-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 70%;
+}
+.footer-top .left{
+  gap: 3rem;
+}
+.footer-top .right{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.stick{
+  width: fit-content;
+  height: fit-content;
+}
+
+.left .footer-contact , .right .footer-contact{
+  font-size: xx-small;
+}
+.footer-contact{
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.footer-bottom{
+  width: 100%;
+  background-color: orange;
+  height: 15%;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom .right {
+  display:inline-flex;
+  gap: 10px;
+  font-size:10px;
 }
